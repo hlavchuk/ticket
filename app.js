@@ -8,8 +8,8 @@ const TRIP = {
   date: "пн, 11 серп.",
   duration: "12 год 30 хв",
   direct: true,
-  priceUAH: 1399,
-  feeUAH: 50
+  priceUAH: 1,
+  feeUAH: 3
 };
 
 // Insert your real PayPal Client ID (Sandbox or Live)
