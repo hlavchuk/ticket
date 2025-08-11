@@ -13,7 +13,7 @@ const TRIP = {
 };
 
 // Insert your real PayPal Client ID (Sandbox or Live)
-const PAYPAL_CLIENT_ID = "test"; // <- change to your own
+const PAYPAL_CLIENT_ID = "AXBhi778J5Oz6Ewi9WbshxZWKfUCy62x_YigowpO8dLWJ2SPZ0-vB80zJNFAuzMVpuWmsR7bzqeZgWZD"; // <- change to your own
 const CURRENCY = "USD"; // PayPal currency, e.g., USD/EUR
 const EXCHANGE_RATE_UAH_TO_USD = 0.025; // demo rate; replace via API/server if needed
 
