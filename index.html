@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Оплата квитка</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <nav class="topnav">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.svg" alt="Logo" width="28" height="28"/>
+      <span class="brand-name">MOL · Бронювання</span>
+    </a>
+    <ul class="menu">
+      <li><a href="#booking" class="active">Бронювання</a></li>
+      <li><a href="#routes">Рейси</a></li>
+      <li><a href="#support">Підтримка</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <header id="booking" class="card mb">
+      <div class="trip-head">
+        <h1 id="tripTitle">Квиток</h1>
+        <span class="badge" id="tripDirect">ПРЯМИЙ РЕЙС</span>
+      </div>
+      <div class="trip-grid">
+        <div>
+          <div class="muted">Звідки</div>
+          <div id="fromCity" class="strong"></div>
+          <div id="fromTime" class="small"></div>
+        </div>
+        <div class="arrow">→</div>
+        <div>
+          <div class="muted">Куди</div>
+          <div id="toCity" class="strong"></div>
+          <div id="toTime" class="small"></div>
+        </div>
+        <div>
+          <div class="muted">Дата</div>
+          <div id="tripDate"></div>
+        </div>
+        <div>
+          <div class="muted">Тривалість</div>
+          <div id="tripDuration"></div>
+        </div>
+      </div>
+    </header>
+
+    <section class="card mb">
+      <h2 class="section-title">1 · Пасажир</h2>
+      <div class="row">
+        <label class="field">
+          <span>Ім’я</span>
+          <input id="firstName" placeholder="Олександра" />
+        </label>
+        <label class="field">
+          <span>Прізвище</span>
+          <input id="lastName" placeholder="Главчук" />
+        </label>
+      </div>
+    </section>
+
+    <section class="card mb">
+      <h2 class="section-title">2 · Місце</h2>
+      <div class="row">
+        <label class="field">
+          <span>Номер місця (необов’язково)</span>
+          <input id="seat" placeholder="Автовибір" />
+        </label>
+      </div>
+    </section>
+
+    <section class="card mb">
+      <h2 class="section-title">3 · Контакти</h2>
+      <div class="row">
+        <label class="field grow">
+          <span>E‑mail</span>
+          <input id="email" placeholder="name@example.com" />
+        </label>
+        <label class="field grow">
+          <span>Телефон</span>
+          <input id="phone" placeholder="+380..." />
+        </label>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2 class="section-title">4 · Оплата</h2>
+        <p class="muted small">Оберіть спосіб оплати. Після успіху вас перенаправить на сторінку “Оплата успішна”.</p>
+        <div class="pay-grid">
+          <div class="pay-card">
+            <h3>PayPal</h3>
+            <div id="paypal-button-container"></div>
+            <p class="hint small">Налаштуйте client-id у <code>app.js</code>. Для тесту можна використовувати sandbox.</p>
+          </div>
+          <div class="pay-card">
+            <h3>LiqPay (картка/Apple Pay/Google Pay)</h3>
+            <button id="liqpayBtn" class="btn">Сплатити через LiqPay</button>
+            <p class="hint small">Потрібні публічний та приватний ключі. Підпис формується на бекенді (<code>/api/liqpay.js</code>).</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card summary">
+        <h2 class="section-title">Ваше бронювання</h2>
+        <div class="summary-row"><span>1 дорослий</span><span id="fareBase"></span></div>
+        <div class="summary-row"><span>Збір за обслуговування</span><span id="fareFee"></span></div>
+        <hr/>
+        <div class="summary-row strong"><span>Усього</span><span id="fareTotal"></span></div>
+        <button id="saveDraft" class="btn secondary full mt">Зберегти PDF бронювання</button>
+      </aside>
+    </section>
+
+    <footer class="muted small center mt-lg">
+      <p id="routes">Демонстраційний шаблон. Особисті ключі не зберігайте у фронтенді.</p>
+    </footer>
+  </main>
+</body>
+</html>

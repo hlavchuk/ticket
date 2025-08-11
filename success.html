@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Оплата успішна</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="topnav">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.svg" alt="Logo" width="28" height="28"/>
+      <span class="brand-name">MOL · Бронювання</span>
+    </a>
+    <ul class="menu">
+      <li><a href="index.html#booking">Бронювання</a></li>
+      <li><a href="index.html#routes">Рейси</a></li>
+      <li><a href="index.html#support">Підтримка</a></li>
+    </ul>
+  </nav>
+  <main class="container">
+    <section class="card center">
+      <h1 style="color:var(--success)">Оплата успішна 🎉</h1>
+      <p>Дякуємо! Ваше бронювання підтверджено.</p>
+      <div id="details" class="muted"></div>
+      <a class="btn mt" href="index.html">Повернутися</a>
+    </section>
+  </main>
+  <script>
+    const p = new URLSearchParams(location.search);
+    const orderId = p.get('orderId') || '';
+    const payer = p.get('payer') || '';
+    document.getElementById('details').textContent = orderId ? `Номер замовлення: ${orderId}  •  Платник: ${payer}` : '';
+  </script>
+</body>
+</html>
